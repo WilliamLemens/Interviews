@@ -10,6 +10,10 @@
     <li><a href="https://www.hackerrank.com/challenges/ctci-array-left-rotation/">Rotate Left</a> (<code>rotLeft()</code>)</li>
   </ul>
   <h4> Dictionaries and Hashmaps </h4>
+  <ul>
+    <li><a href="https://www.hackerrank.com/challenges/ctci-ransom-note/">Hash Tables: Ransom Note</a> (<code>checkMagazine()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/two-strings/">Two Strings</a> (Inefficient: <code>twoStringsOld()</code>, Efficient: <code>twoStrings()</code>)</li>
+  </ul>
   <h4> Tips and Guidelines </h4>
   <h4> Sorting </h4>
   <h4> String Manipulation </h4>
