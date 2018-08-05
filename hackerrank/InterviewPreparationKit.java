@@ -1,4 +1,4 @@
-public class Arrays {
+public class InterviewPreparationKit {
 	public static void main(String args[]) {
 		int[][] twodarr =  {{-9, -9, -9,  1, 1, 1},
 				 		{ 0, -9,  0,  4, 3, 2},
