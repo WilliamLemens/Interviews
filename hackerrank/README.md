@@ -4,9 +4,11 @@
   <summary>
   [Found here](https://www.hackerrank.com/interview/interview-preparation-kit)
   </summary>
-  #### Arrays
-  * [2D array](https://www.hackerrank.com/challenges/2d-array/) (hourglassSum())
-  * [Rotate Left](https://www.hackerrank.com/challenges/ctci-array-left-rotation/) (rotLeft())
+  <h4> Arrays </h4>
+  <ul>
+    <li><a href="https://www.hackerrank.com/challenges/2d-array/">2D array</a> (hourglassSum())</li>
+    <li><a href="https://www.hackerrank.com/challenges/ctci-array-left-rotation/">Rotate Left</a> (rotLeft())</li>
+  </ul>
   #### Dictionaries and Hashmaps
   #### Tips and Guidelines
   #### Sorting
