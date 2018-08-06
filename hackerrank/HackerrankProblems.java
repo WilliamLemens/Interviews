@@ -30,6 +30,9 @@ public class HackerrankProblems {
 		checkMagazine(sarr1, sarr2);
 
 		makeAnagram("fcrxzwscanmligyxyvym","jxwtrhvujlmrpdoqbisbwhmgpmeoke");
+
+		minimumBribes(new int[] {3,2,1});
+		minimumBribes(new int[] {2, 1, 5, 3, 4});
 	}
 
     // ================ ARRAYS ================
@@ -66,6 +69,37 @@ public class HackerrankProblems {
     	for (int i = 0; i < out.length; i++)
     		out[i]=a[(i+d)%a.length];
     	return out;
+    }
+
+    /**
+     *
+     * @param q
+     */
+    public static void minimumBribes(int[] q) {
+    	int i = q.length-1, count = 0;
+    	while (i > 0) {
+    		if (q[i] == i+1) {
+    			i--;
+    			continue;
+    		} else if (q[i-1] == i+1) {
+    			count++;
+    			q[i-1] = q[i];
+    			q[i] = i+1;
+    			i--;
+    			continue;
+    		} else if (q[i-2] == i+1) {
+    			count+=2;
+    			q[i-2] = q[i-1];
+    			q[i-1] = q[i];
+    			q[i] = i+1;
+    			i--;
+    			continue;
+    		} else {
+    			System.out.println("Too chaotic");
+    			return;
+    		}
+    	}
+    	System.out.println(count);
     }
 
     // ================ DICTIONARIES & HASHMAPS ================

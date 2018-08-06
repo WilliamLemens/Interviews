@@ -8,6 +8,7 @@
   <ul>
     <li><a href="https://www.hackerrank.com/challenges/2d-array/">2D array</a> (<code>hourglassSum()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/ctci-array-left-rotation/">Rotate Left</a> (<code>rotLeft()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/new-year-chaos/">New Year Chaos</a> (<code>minimumBribes()</code>)</li>
   </ul>
   <h4> Dictionaries and Hashmaps </h4>
   <ul>
