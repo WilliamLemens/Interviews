@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -36,6 +38,39 @@ public class HackerrankProblems {
 
 		System.out.println(minimumAbsoluteDifference(new int[] {-59, -36, -13, 1, -53, -92, -2, -96, -54, 75}));
 	}
+
+	// +-======================================-+
+	// |										|
+	// |				Algorithms				|
+	// |										|
+	// +-======================================-+
+
+	// ================ WARMUP ================
+
+	public static int solveMeFirst(int a, int b) { return a+b; }
+
+	public static int simpleArraySum(int[] ar) {
+        int out = 0;
+        for (int i : ar) out += i;
+        return out;
+    }
+
+	public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+        List<Integer> out = new ArrayList<>();
+        int ac=0, bc=0;
+        for (int i = 0; i < a.size(); i++)
+        	if (a.get(i)>b.get(i)) ac++;
+        	else if (b.get(i)>a.get(i)) bc++;
+        out.add(ac);
+        out.add(bc);
+        return out;
+    }
+
+	// +-======================================-+
+	// |										|
+	// |		Interview Preparation Kit		|
+	// |										|
+	// +-======================================-+
 
     // ================ ARRAYS ================
 
@@ -241,9 +276,9 @@ public class HackerrankProblems {
     // ================ GREEDY ALGORITHMS ================
 
     /**
-     *
+     * Finds the minimum absolute difference between any two numbers in the array.
      * @param arr
-     * @return
+     * @return minimum absolute difference
      */
 	public static int minimumAbsoluteDifference(int[] arr) {
 		int min = Integer.MAX_VALUE;
@@ -254,6 +289,10 @@ public class HackerrankProblems {
 		}
 		return min;
 	}
+	public static int luckBalance(int k, int[][] contests) {
+		// TODO
+		return -1;
+    }
     // ================ SEARCH ================
 
     // ================ DYNAMIC PROGRAMMING ================
