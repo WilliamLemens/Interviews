@@ -38,28 +38,28 @@
   </ul>
   <h4> Greedy Algorithms </h4>
   <ul>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array/">Minimum Absolute Difference in an Array</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/luck-balance/">Luck Balance</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/greedy-florist/">Greedy Florist</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/angry-children/">Max Min</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/reverse-shuffle-merge/">Reverse Shuffle Merge</a> <em>TODO</em></li>
   </ul>
   <h4> Search </h4>
   <ul>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/ctci-ice-cream-parlor/">Hash Tables: Ice Cream Parlor</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/swap-nodes-algo/">Swap Nodes [Algo]</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/pairs/">Pairs</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/triple-sum/">Triple sum</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/minimum-time-required/">Minimum Time Required</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/maximum-subarray-sum/">Maximum Subarray Sum</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/making-candies/">Making Candies</a> <em>TODO</em></li>
   </ul>
   <h4> Dynamic Programming </h4>
   <ul>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
-    <li><a href=""></a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/max-array-sum/">Max Array Sum</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/abbr/">Abbreviation</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/candies/">Candies</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/decibinary-numbers/">Decibinary Numbers</a> <em>TODO</em></li>
   </ul>
   <h4> Stacks and Queues </h4>
   <ul>
