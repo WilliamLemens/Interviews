@@ -110,15 +110,12 @@
   </ul>
 </details>
 
-### Tips and Guidelines (+ Notes)
-#### Interview Evaluations
-[Video](https://youtu.be/jxAWQN5t6wg)
-* Goal is to see how you think & learn about the candidate as a software engineer.
-* Doesn't have to be perfect code, but should be roughly correct.
-  * Stuff like putting .size() instead of .length() is probably not a big deal.
-  * Stuff like using == instead of = is concerning.
-* Communicate thought process as much as possible.
-  * Just keep talking, even if it's just mumbling it gives a better idea of what's going on in your head than sitting there silently.
-#### Behavioral Questions
-#### Solving Algorithms
-#### 3 Algorithm Strategies
+## Algorithms
+[Link](https://www.hackerrank.com/interview/interview-preparation-kit)
+### Problems:
+<details>
+  <summary> Problem set </summary>
+  <ul>
+    <li><a href="https://www.hackerrank.com/challenges/solve-me-first/">Solve Me First</a> <code>solveMeFirst()</code></li>=
+  </ul>
+</details>
