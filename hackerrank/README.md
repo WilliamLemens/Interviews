@@ -1,4 +1,4 @@
-# Hackerrank problems
+# Hackerrank Problems
 ### Interview Preparation Kit
 <details>
   <summary>
