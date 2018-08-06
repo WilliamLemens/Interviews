@@ -9,7 +9,7 @@
     <li><a href="https://www.hackerrank.com/challenges/2d-array/">2D array</a> (<code>hourglassSum()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/ctci-array-left-rotation/">Rotate Left</a> (<code>rotLeft()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/new-year-chaos/">New Year Chaos</a> (First go: <code>minimumBribes()</code>, Better one: <code>minimumBribes2()</code>)</li>
-    <li><a href="https://www.hackerrank.com/challenges/minimum-swaps-2/">Minimum Swaps 2</a> (<code>minimumSwaps()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/minimum-swaps-2/">Minimum Swaps 2</a> (<code>minimumSwaps()</code>) <em>TODO</em></li>
   </ul>
   <h4> Dictionaries and Hashmaps </h4>
   <ul>
@@ -23,8 +23,8 @@
   </ul>
   <h4> String Manipulation </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/ctci-making-anagrams/">Strings: Making Anagrams</a> (<code>makeAnagram()</code>)</li>
-    <li><a href="https://www.hackerrank.com/challenges/mark-and-toys/">Alternating Characters</a> (<code>maximumToys()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/ctci-making-anagrams/">Strings: Making Anagrams</a> (<code>makeAnagram()</code>) <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/mark-and-toys/">Alternating Characters</a> (<code>maximumToys()</code>) <em>TODO</em></li>
   </ul>
   <h4> Greedy Algorithms </h4>
   <h4> Search </h4>
