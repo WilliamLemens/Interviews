@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class InterviewPreparationKit {
+public class HackerrankProblems {
 	public static void main(String args[]) {
 		int[][] twodarr =  {{-9, -9, -9,  1, 1, 1},
 				 		{ 0, -9,  0,  4, 3, 2},
