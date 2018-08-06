@@ -116,6 +116,7 @@
 <details>
   <summary> Problem set </summary>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/solve-me-first/">Solve Me First</a> <code>solveMeFirst()</code></li>=
+    <li><a href="https://www.hackerrank.com/challenges/solve-me-first/">Solve Me First</a> <code>solveMeFirst()</code></li>
+      <li><a href="https://www.hackerrank.com/challenges/simple-array-sum/">Simple Array Sum</a> <code>simpleArraySum()</code></li>
   </ul>
 </details>
