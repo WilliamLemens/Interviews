@@ -1,9 +1,9 @@
 # Hackerrank Problems
 ## Interview Preparation Kit
+[Link](https://www.hackerrank.com/interview/interview-preparation-kit)
+### Problems:
 <details>
-  <summary>
-  <a href="https://www.hackerrank.com/interview/interview-preparation-kit">Found here</a>
-  </summary>
+  <summary> Problem set </summary>
   <h4> Arrays </h4>
   <ul>
     <li><a href="https://www.hackerrank.com/challenges/2d-array/">2D array</a> (<code>hourglassSum()</code>)</li>

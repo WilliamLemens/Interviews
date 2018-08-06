@@ -1,10 +1,10 @@
 # Leetcode Problems
 ## Top Interview Questions
+### Problems
+[Link](https://leetcode.com/problemset/top-interview-questions/)
 <details>
-  <summary>
-  <a href="https://leetcode.com/problemset/top-interview-questions/">Found here</a>
-  </summary>
-  <ol>
+  <summary> Problem set </summary>
+  <ul>
     <li><a href="https://leetcode.com/problems/two-sum/">Two Sum</a> (Naive: <code>twoSumNaive()</code>, Efficient: <code>twoSum()</code>)</li>
-  </ol>
+  </ul>
 </details>
