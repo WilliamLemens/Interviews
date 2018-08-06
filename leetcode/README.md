@@ -1,5 +1,5 @@
 # Leetcode Problems
-### Top Interview Questions
+## Top Interview Questions
 <details>
   <summary>
   <a href="https://leetcode.com/problemset/top-interview-questions/">Found here</a>
