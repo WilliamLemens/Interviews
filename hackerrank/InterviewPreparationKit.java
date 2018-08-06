@@ -1,5 +1,3 @@
-package hackerrank;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -22,21 +20,23 @@ public class InterviewPreparationKit {
 						{0, 0, 1, 2, 4, 0}};
 		System.out.println(hourglassSum(twodarr));
 		System.out.println(hourglassSum(twodarr2));
-		
+
 		int[] arr = {1,2,3,4,5};
 		System.out.println(java.util.Arrays.toString(rotLeft(arr,1)));
-		System.out.println(java.util.Arrays.toString(rotLeft(arr,2)));\
-		
+		System.out.println(java.util.Arrays.toString(rotLeft(arr,2)));
+
 		String[] sarr1 = {"two", "times", "three", "is", "not", "four"};
 		String[] sarr2 = {"two", "times", "two", "is", "four"};
 		checkMagazine(sarr1, sarr2);
+
+		makeAnagram("fcrxzwscanmligyxyvym","jxwtrhvujlmrpdoqbisbwhmgpmeoke");
 	}
 
     // ================ ARRAYS ================
-    
+
     /**
      * Calculate and return the hourglass sums of arr
-     * 
+     *
      * a b c
      *   d
      * e f g
@@ -54,7 +54,7 @@ public class InterviewPreparationKit {
 			}
 		return max;
 	}
-	
+
 	/**
 	 * ex: rotLeft([1,2,3,4,5],2} -> [3,4,5,1,2]
 	 * @param a an array of integers
@@ -69,7 +69,7 @@ public class InterviewPreparationKit {
     }
 
     // ================ DICTIONARIES & HASHMAPS ================
-	
+
 	/**
 	 * Checks if each word in note is also in magazine
 	 * @param magazine
@@ -79,10 +79,10 @@ public class InterviewPreparationKit {
     	Map<String, Integer> map = new HashMap<>();
     	boolean b = true;
     	int i = -1;
-    	
+
     	for (String s : magazine)
     		map.put(s, (map.containsKey(s) ? map.get(s)+1 : 1));
-    	
+
     	while (++i < note.length && b)
     		if (!map.containsKey(note[i]))
     			b = false;
@@ -91,7 +91,7 @@ public class InterviewPreparationKit {
     			map.put(note[i], k);
     			b = k >= 0;
     		}
-    	
+
     	System.out.println(b ? "Yes" : "No");
     }
 
@@ -106,7 +106,7 @@ public class InterviewPreparationKit {
     	set1.retainAll(new HashSet(Arrays.asList(s2.split(""))));
     	return set1.size() > 0 ? "YES" : "NO";
     }
-    
+
     /**
      * Returns "YES" if s1 and s2 share a substring, "NO" otherwise
      * @param s1
@@ -120,5 +120,59 @@ public class InterviewPreparationKit {
     		for (char c2 : ca2)
     			if (c1 == c2) return "YES";
     	return "NO";
+    }
+
+    // ================ SORTING ================
+
+    /**
+     * Sort a.
+     * Print the number of swaps, first element, and last element.
+     * @param a = input array
+     */
+    public static void countSwaps(int[] a) {
+    	int count = 0;
+    	for (int i = 0; i < a.length; i++)
+    	    for (int j = 0; j < a.length - 1; j++)
+    	        // Swap adjacent elements if they are in decreasing order
+    	        if (a[j] > a[j + 1]) {
+    	        	int temp = a[j];
+    	        	a[j]=a[j+1];
+    	        	a[j+1]=temp;
+    	        	count++;
+    	        }
+    	System.out.println("Array is sorted in "+count+" swaps.");
+    	System.out.println("First Element: "+a[0]);
+    	System.out.println("Last Element: "+a[a.length-1]);
+    }
+
+    /**
+     * Returns the max number of toys that we can buy with $k.
+     * Each toy's price is in prices
+     * @param prices
+     * @param k
+     * @return
+     */
+    public static int maximumToys(int[] prices, int k) {
+    	Arrays.sort(prices);
+    	int count = 0;
+    	for (int i : prices) {
+    		k -= i;
+    		if (k > 0) count++;
+    		else break;
+    	}
+    	return count;
+    }
+
+    // ================ STRING MANIPULATION ================
+
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public static int makeAnagram(String a, String b) {
+    	// TODO
+    	return -1;
     }
 }

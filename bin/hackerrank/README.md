@@ -16,15 +16,7 @@
   </ul>
   <h4> Tips and Guidelines </h4>
   <h4> Sorting </h4>
-  <ul>
-    <li><a href="https://www.hackerrank.com/challenges/ctci-bubble-sort/">Sorting: Bubble Sort</a> (<code>countSwaps()</code>)</li>
-    <li><a href="https://www.hackerrank.com/challenges/mark-and-toys/">Mark and Toys</a> (<code>maximumToys()</code>)</li>
-  </ul>
   <h4> String Manipulation </h4>
-  <ul>
-    <li><a href="https://www.hackerrank.com/challenges/ctci-making-anagrams/">Strings: Making Anagrams</a> (<code>makeAnagram()</code>)</li>
-    <li><a href="https://www.hackerrank.com/challenges/mark-and-toys/">Alternating Characters</a> (<code>maximumToys()</code>)</li>
-  </ul>
   <h4> Greedy Algorithms </h4>
   <h4> Search </h4>
   <h4> Dynamic Programming </h4>
