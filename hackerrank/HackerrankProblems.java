@@ -31,8 +31,8 @@ public class HackerrankProblems {
 
 		makeAnagram("fcrxzwscanmligyxyvym","jxwtrhvujlmrpdoqbisbwhmgpmeoke");
 
-		minimumBribes(new int[] {3,2,1});
-		minimumBribes(new int[] {2, 1, 5, 3, 4});
+		minimumBribes2(new int[] {3,2,1});
+		minimumBribes2(new int[] {2, 1, 5, 3, 4});
 	}
 
     // ================ ARRAYS ================
@@ -72,7 +72,7 @@ public class HackerrankProblems {
     }
 
     /**
-     *
+     * O(N) but requires moving values in array
      * @param q
      */
     public static void minimumBribes(int[] q) {
@@ -98,6 +98,23 @@ public class HackerrankProblems {
     			System.out.println("Too chaotic");
     			return;
     		}
+    	}
+    	System.out.println(count);
+    }
+    /**
+     * Still O(N), Doesn't require any disk manipulation
+     * @param q
+     */
+    public static void minimumBribes2(int[] q) {
+    	int count = 0;
+    	for (int i = q.length-1; i >= 0; i--) {
+    		if (q[i] - (i+1) > 2) { // if it's more than 2 off, it's too far away
+    			System.out.println("Too chaotic");
+    			return;
+    		}
+    		int val = q[i]-2;
+    		for (int j = val > 0 ? val : 0; j < i; j++)
+    			if (q[j] > q[i]) count++;
     	}
     	System.out.println(count);
     }
@@ -140,7 +157,6 @@ public class HackerrankProblems {
     	set1.retainAll(new HashSet(Arrays.asList(s2.split(""))));
     	return set1.size() > 0 ? "YES" : "NO";
     }
-
     /**
      * Returns "YES" if s1 and s2 share a substring, "NO" otherwise
      * @param s1
