@@ -38,7 +38,7 @@
   </ul>
   <h4> Greedy Algorithms </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array/">Minimum Absolute Difference in an Array</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array/">Minimum Absolute Difference in an Array</a> (<code>minimumAbsoluteDifference()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/luck-balance/">Luck Balance</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/greedy-florist/">Greedy Florist</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/angry-children/">Max Min</a> <em>TODO</em></li>
