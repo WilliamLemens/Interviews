@@ -33,6 +33,8 @@ public class HackerrankProblems {
 
 		minimumBribes2(new int[] {3,2,1});
 		minimumBribes2(new int[] {2, 1, 5, 3, 4});
+
+		System.out.println(minimumAbsoluteDifference(new int[] {-59, -36, -13, 1, -53, -92, -2, -96, -54, 75}));
 	}
 
     // ================ ARRAYS ================
@@ -117,6 +119,16 @@ public class HackerrankProblems {
     			if (q[j] > q[i]) count++;
     	}
     	System.out.println(count);
+    }
+
+    /**
+     *
+     * @param arr
+     * @return
+     */
+    public static int minimumSwaps(int[] arr) {
+    	//TODO
+    	return -1;
     }
 
     // ================ DICTIONARIES & HASHMAPS ================
@@ -225,4 +237,25 @@ public class HackerrankProblems {
     	// TODO
     	return -1;
     }
+
+    // ================ GREEDY ALGORITHMS ================
+
+    /**
+     *
+     * @param arr
+     * @return
+     */
+	public static int minimumAbsoluteDifference(int[] arr) {
+		int min = Integer.MAX_VALUE;
+		Arrays.sort(arr);
+		for (int i = 1; i < arr.length; i++) {
+			int val = Math.abs(arr[i-1]-arr[i]);
+			if (val < min) min = val;
+		}
+		return min;
+	}
+    // ================ SEARCH ================
+
+    // ================ DYNAMIC PROGRAMMING ================
+
 }
