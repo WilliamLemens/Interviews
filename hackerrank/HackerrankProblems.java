@@ -51,8 +51,7 @@ public class HackerrankProblems {
 
     public static int simpleArraySum(int[] ar) {
         int out = 0;
-        for (int i : ar)
-            out += i;
+        for (int i : ar) out += i;
         return out;
     }
 
@@ -69,6 +68,19 @@ public class HackerrankProblems {
         return out;
     }
 
+    /**
+     * Sums an array of longs
+     * 
+     * Java makes this super easy, C we'd need long long
+     * @param ar
+     * @return the sum of all elements in ar
+     */
+    public static long aVeryBigSum(long[] ar) {
+        long out = ar[0];
+        for (int i = 1; i < ar.length; i++) out += ar[i];
+        return out;
+    }
+    
     // +-======================================-+
     // |                                        |
     // |       Interview Preparation Kit        |

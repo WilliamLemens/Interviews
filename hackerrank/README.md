@@ -120,5 +120,6 @@
     <li><a href="https://www.hackerrank.com/challenges/solve-me-first/">Solve Me First</a> <code>solveMeFirst()</code></li>
     <li><a href="https://www.hackerrank.com/challenges/simple-array-sum/">Simple Array Sum</a> <code>simpleArraySum()</code></li>
     <li><a href="https://www.hackerrank.com/challenges/compare-the-triplets/">Compare the Triplets</a> <code>compareTriplets()</code></li>
+    <li><a href="https://www.hackerrank.com/challenges/a-very-big-sum/">A Very Big Sum</a> <code>aVeryBigSum()</code></li>
   </ul>
 </details>
