@@ -8,35 +8,44 @@ import java.util.Set;
 
 public class HackerrankProblems {
     public static void main(String args[]) {
-        int[][] twodarr = { { -9, -9, -9,  1, 1, 1 },
-                            {  0, -9,  0,  4, 3, 2 },
-                            { -9, -9, -9,  1, 2, 3 },
-                            {  0,  0,  8,  6, 6, 0 },
-                            {  0,  0,  0, -2, 0, 0 },
-                            {  0,  0,  1,  2, 4, 0 } };
-        int[][] twodarr2 = {{ 1, 1, 1, 0, 0, 0 },
-                            { 0, 1, 0, 0, 0, 0 },
-                            { 1, 1, 1, 0, 0, 0 },
-                            { 0, 0, 2, 4, 4, 0 },
-                            { 0, 0, 0, 2, 0, 0 },
-                            { 0, 0, 1, 2, 4, 0 } };
-        System.out.println(hourglassSum(twodarr));
-        System.out.println(hourglassSum(twodarr2));
-
-        int[] arr = { 1, 2, 3, 4, 5 };
-        System.out.println(java.util.Arrays.toString(rotLeft(arr, 1)));
-        System.out.println(java.util.Arrays.toString(rotLeft(arr, 2)));
-
-        String[] sarr1 = { "two", "times", "three", "is", "not", "four" };
-        String[] sarr2 = { "two", "times", "two", "is", "four" };
-        checkMagazine(sarr1, sarr2);
-
-        makeAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke");
-
-        minimumBribes2(new int[] { 3, 2, 1 });
-        minimumBribes2(new int[] { 2, 1, 5, 3, 4 });
-
-        System.out.println(minimumAbsoluteDifference(new int[] { -59, -36, -13, 1, -53, -92, -2, -96, -54, 75 }));
+        // hourglassSum()
+//        int[][] twodarr = { { -9, -9, -9,  1, 1, 1 },
+//                            {  0, -9,  0,  4, 3, 2 },
+//                            { -9, -9, -9,  1, 2, 3 },
+//                            {  0,  0,  8,  6, 6, 0 },
+//                            {  0,  0,  0, -2, 0, 0 },
+//                            {  0,  0,  1,  2, 4, 0 } };
+//        int[][] twodarr2 = {{ 1, 1, 1, 0, 0, 0 },
+//                            { 0, 1, 0, 0, 0, 0 },
+//                            { 1, 1, 1, 0, 0, 0 },
+//                            { 0, 0, 2, 4, 4, 0 },
+//                            { 0, 0, 0, 2, 0, 0 },
+//                            { 0, 0, 1, 2, 4, 0 } };
+//        System.out.println(hourglassSum(twodarr));
+//        System.out.println(hourglassSum(twodarr2));
+        // rotLeft()
+//        int[] arr = { 1, 2, 3, 4, 5 };
+//        System.out.println(java.util.Arrays.toString(rotLeft(arr, 1)));
+//        System.out.println(java.util.Arrays.toString(rotLeft(arr, 2)));
+        // checkMagazine()
+//        String[] sarr1 = { "two", "times", "three", "is", "not", "four" };
+//        String[] sarr2 = { "two", "times", "two", "is", "four" };
+//        checkMagazine(sarr1, sarr2);
+        // makeAnagram()
+//        makeAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke");
+        // minimumBribes()
+//        minimumBribes2(new int[] { 3, 2, 1 });
+//        minimumBribes2(new int[] { 2, 1, 5, 3, 4 });
+        // minimumAbsoluteDifference()
+//        System.out.println(minimumAbsoluteDifference(new int[] { -59, -36, -13, 1, -53, -92, -2, -96, -54, 75 }));
+        // luckBalance()
+//        int[][] lbarr = new int[][] {   { 5, 1},
+//                                        { 2, 1},
+//                                        { 1, 1},
+//                                        { 8, 1},
+//                                        {10, 0},
+//                                        { 5, 0}};
+//        System.out.println(luckBalance(3,lbarr));
     }
 
     // +-======================================-+
@@ -319,9 +328,30 @@ public class HackerrankProblems {
         return min;
     }
 
+    /**
+     * O(NlogN) because of sort
+     * @param k
+     * @param contests
+     * @return
+     */
     public static int luckBalance(int k, int[][] contests) {
-        // TODO
-        return -1;
+        int out = 0, important = 0;
+        int[] helper = new int[contests.length];
+        for (int i = 0; i < contests.length; i++)
+            if (contests[i][1] == 0) // unimportant, we can just collect the luck
+                out += contests[i][0];
+            else { // important, need to track it to see if we have to do it
+                helper[i] = contests[i][0];
+                important++;
+            }
+        
+        Arrays.sort(helper);
+        
+        int i = helper.length-important,    // skips initial 0s if all comps weren't important
+            split = helper.length-k;        // index where we go from winning to losing
+        while (i < split) out -= helper[i++];           // subtract luck for comps we must win
+        while (i < helper.length) out += helper[i++];   // add luck for comps we can lose
+        return out;
     }
     // ================ SEARCH ================
 
