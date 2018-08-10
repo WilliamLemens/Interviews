@@ -9,39 +9,41 @@ import java.util.Set;
 public class HackerrankProblems {
   
   public static void main(String args[]) {
-    // hourglassSum()
-    int[][] twodarr = { { -9, -9, -9,  1, 1, 1 },
-                        {  0, -9,  0,  4, 3, 2 },
-                        { -9, -9, -9,  1, 2, 3 },
-                        {  0,  0,  8,  6, 6, 0 },
-                        {  0,  0,  0, -2, 0, 0 },
-                        {  0,  0,  1,  2, 4, 0 } };
-    int[][] twodarr2 = { { 1, 1, 1, 0, 0, 0 },
-                         { 0, 1, 0, 0, 0, 0 },
-                         { 1, 1, 1, 0, 0, 0 },
-                         { 0, 0, 2, 4, 4, 0 },
-                         { 0, 0, 0, 2, 0, 0 },
-                         { 0, 0, 1, 2, 4, 0 } };
-    System.out.println(hourglassSum(twodarr));
-    System.out.println(hourglassSum(twodarr2));
-    // rotLeft()
-    int[] arr = { 1, 2, 3, 4, 5 };
-    System.out.println(java.util.Arrays.toString(rotLeft(arr, 1)));
-    System.out.println(java.util.Arrays.toString(rotLeft(arr, 2)));
-    // checkMagazine()
-    String[] sarr1 = { "two", "times", "three", "is", "not", "four" };
-    String[] sarr2 = { "two", "times", "two", "is", "four" };
-    checkMagazine(sarr1, sarr2);
-    // makeAnagram()
-    makeAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke");
-    // minimumBribes()
-    minimumBribes2(new int[] { 3, 2, 1 });
-    minimumBribes2(new int[] { 2, 1, 5, 3, 4 });
-    // minimumAbsoluteDifference()
-    System.out.println(minimumAbsoluteDifference(new int[] { -59, -36, -13, 1, -53, -92, -2, -96, -54, 75 }));
-    // luckBalance()
-    int[][] lbarr = new int[][] { { 5, 1 }, { 2, 1 }, { 1, 1 }, { 8, 1 }, { 10, 0 }, { 5, 0 } };
-    System.out.println(luckBalance(3, lbarr));
+//    // hourglassSum()
+//    int[][] twodarr = { { -9, -9, -9,  1, 1, 1 },
+//                        {  0, -9,  0,  4, 3, 2 },
+//                        { -9, -9, -9,  1, 2, 3 },
+//                        {  0,  0,  8,  6, 6, 0 },
+//                        {  0,  0,  0, -2, 0, 0 },
+//                        {  0,  0,  1,  2, 4, 0 } };
+//    int[][] twodarr2 = { { 1, 1, 1, 0, 0, 0 },
+//                         { 0, 1, 0, 0, 0, 0 },
+//                         { 1, 1, 1, 0, 0, 0 },
+//                         { 0, 0, 2, 4, 4, 0 },
+//                         { 0, 0, 0, 2, 0, 0 },
+//                         { 0, 0, 1, 2, 4, 0 } };
+//    System.out.println(hourglassSum(twodarr));
+//    System.out.println(hourglassSum(twodarr2));
+//    // rotLeft()
+    int[] arr = { 5, 2, 4, 3, 1 };
+//    System.out.println(java.util.Arrays.toString(rotLeft(arr, 1)));
+//    System.out.println(java.util.Arrays.toString(rotLeft(arr, 2)));
+//    // checkMagazine()
+//    String[] sarr1 = { "two", "times", "three", "is", "not", "four" };
+//    String[] sarr2 = { "two", "times", "two", "is", "four" };
+//    checkMagazine(sarr1, sarr2);
+//    // makeAnagram()
+//    makeAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke");
+//    // minimumBribes()
+//    minimumBribes2(new int[] { 3, 2, 1 });
+//    minimumBribes2(new int[] { 2, 1, 5, 3, 4 });
+//    // minimumAbsoluteDifference()
+//    System.out.println(minimumAbsoluteDifference(new int[] { -59, -36, -13, 1, -53, -92, -2, -96, -54, 75 }));
+//    // luckBalance()
+//    int[][] lbarr = new int[][] { { 5, 1 }, { 2, 1 }, { 1, 1 }, { 8, 1 }, { 10, 0 }, { 5, 0 } };
+//    System.out.println(luckBalance(3, lbarr));
+    // The Coin Change Problem
+    System.out.println(getWays(10,arr));
   }
 
   // +-======================================-+
@@ -91,6 +93,26 @@ public class HackerrankProblems {
     return out;
   }
 
+  // ================ DYNAMIC PROGRAMMING ================
+  
+  /**
+   * 
+   * @param n > 0, n < 251
+   * @param c
+   * @return
+   */
+  public static long getWays(int n, int[] c) {
+    Arrays.sort(c);
+    long[] ways = new long[n+1];
+    ways[0] = 1;
+    for (int l : c)
+      for (int i = l; i <= n; i++) { // start at 1 because 0 always no coins
+        ways[i] += ways[i-1]>0 ? ways[i-l] : 1;
+      System.out.println(i+": "+ways[i]);
+    }
+    return ways[(int) n];
+  }
+  
   // +-======================================-+
   // |                                        |
   // |      Interview Preparation Kit         |

@@ -1,7 +1,6 @@
 # Leetcode Problems
 ## Top Interview Questions
-[Link](https://leetcode.com/problemset/top-interview-questions/)
-### Problems
+### [Problems](https://leetcode.com/problemset/top-interview-questions/)
 <details>
   <summary> Problem set </summary>
   <ul>

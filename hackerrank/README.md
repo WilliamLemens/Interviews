@@ -1,7 +1,6 @@
 # Hackerrank Problems
 ## Interview Preparation Kit
-[Link](https://www.hackerrank.com/interview/interview-preparation-kit)
-### Problems:
+### [Problems:](https://www.hackerrank.com/interview/interview-preparation-kit)
 <details>
   <summary> Problem set </summary>
   <h4> Arrays </h4>
@@ -111,8 +110,7 @@
 </details>
 
 ## Algorithms
-[Link](https://www.hackerrank.com/interview/interview-preparation-kit)
-### Problems:
+### [Problems:](https://www.hackerrank.com/domains/algorithms)
 <details>
   <summary> Problem set </summary>
   <h4> Warmup </h4>
@@ -121,5 +119,9 @@
     <li><a href="https://www.hackerrank.com/challenges/simple-array-sum/">Simple Array Sum</a> <code>simpleArraySum()</code></li>
     <li><a href="https://www.hackerrank.com/challenges/compare-the-triplets/">Compare the Triplets</a> <code>compareTriplets()</code></li>
     <li><a href="https://www.hackerrank.com/challenges/a-very-big-sum/">A Very Big Sum</a> <code>aVeryBigSum()</code></li>
+  </ul>
+  <h4> Dynamic Programming </h4>
+  <ul>
+    <li><a href="https://www.hackerrank.com/challenges/coin-change/problem">The Coin Change Problem</a> <code>getWays()</code></li> <em>TODO</em>
   </ul>
 </details>
