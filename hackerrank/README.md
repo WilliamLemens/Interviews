@@ -55,7 +55,10 @@
   </ul>
   <h4> Dynamic Programming </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/max-array-sum/">Max Array Sum</a> <em>TODO</em></li>
+    <li>
+      <a href="https://www.hackerrank.com/challenges/max-array-sum/">Max Array Sum</a> <code>maxSubsetSum()</code>
+      <p> Nice twist on the subarray sum problem, but poor problem description and test cases. Pretty sure it's missing a lot of edge cases, but oh well. </p>
+    </li>
     <li><a href="https://www.hackerrank.com/challenges/abbr/">Abbreviation</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/candies/">Candies</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/decibinary-numbers/">Decibinary Numbers</a> <em>TODO</em></li>
@@ -123,5 +126,6 @@
   <h4> Dynamic Programming </h4>
   <ul>
     <li><a href="https://www.hackerrank.com/challenges/coin-change/problem">The Coin Change Problem</a> <code>getWays()</code></li>
+    <li><a href="https://www.hackerrank.com/challenges/maxsubarray/problem">The Maximum Subarray</a> <code>maxSubarray()</code></li>
   </ul>
 </details>

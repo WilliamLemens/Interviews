@@ -25,7 +25,7 @@ public class HackerrankProblems {
 //    System.out.println(hourglassSum(twodarr));
 //    System.out.println(hourglassSum(twodarr2));
 //    // rotLeft()
-    int[] arr = { 5, 2, 4, 3, 1 };
+    int[] arr = { 5, 2, -4, 5, -1 };
 //    System.out.println(java.util.Arrays.toString(rotLeft(arr, 1)));
 //    System.out.println(java.util.Arrays.toString(rotLeft(arr, 2)));
 //    // checkMagazine()
@@ -42,8 +42,10 @@ public class HackerrankProblems {
 //    // luckBalance()
 //    int[][] lbarr = new int[][] { { 5, 1 }, { 2, 1 }, { 1, 1 }, { 8, 1 }, { 10, 0 }, { 5, 0 } };
 //    System.out.println(luckBalance(3, lbarr));
-    // The Coin Change Problem
-    System.out.println(getWays(10,arr));
+//    // The Coin Change Problem
+//    System.out.println(getWays(10,arr));
+    // max arr subset
+    System.out.println(Arrays.toString(maxSubarray(arr)));
   }
 
   // +-======================================-+
@@ -379,5 +381,51 @@ public class HackerrankProblems {
   // ================ SEARCH ================
 
   // ================ DYNAMIC PROGRAMMING ================
-
+  /**
+   * Calculates the maximum contiguous subarray sum and the
+   * maximum subsequence sum
+   * @param arr
+   * @return [max subarray sum, max subsequence sum]
+   */
+  public static int[] maxSubarray(int[] arr) {
+    int maxes[] = new int[] {Integer.MIN_VALUE, Integer.MIN_VALUE}; // subarray, subsequence
+    int current = 0;
+    for (int i = 0; i < arr.length; i++) {
+      // max subarray
+      current += arr[i];
+      if (maxes[0] < current) maxes[0] = current;
+      if (current < 0) current = 0;
+      // max subsequence
+      if (maxes[1] < 0 && maxes[1] < arr[i]) maxes[1] = arr[i];
+      else if (arr[i] > 0) maxes[1] += arr[i];
+    }
+    return maxes;
+  }
+  /**
+   * Finds the maximum sum of non-consecutive integers
+   * @param arr
+   * @return maximum sum
+   */
+  public static int maxSubsetSum(int[] arr) {
+    arr[0] = Math.max(0, arr[0]);
+    arr[1] = Math.max(arr[0], arr[1]);
+    for (int i = 2; i < arr.length; i++)
+      arr[i] = Math.max(arr[i-1], arr[i]+arr[i-2]);
+    return arr[arr.length-1];
+  }
+  /**
+   * Finds the maximum sum of contiguous values in arr
+   * @param arr
+   * @return sum of the maximum subarray
+   */
+  public static int maxSubarraySum(int[] arr) {
+    int max = Integer.MIN_VALUE;
+    int current = 0;
+    for (int i = 0; i < arr.length; i++) {
+      current += arr[i];
+      if (max < current) max = current;
+      if (current < 0) current = 0;
+    }
+    return max;
+  }
 }
