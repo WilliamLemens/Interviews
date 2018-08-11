@@ -98,19 +98,16 @@ public class HackerrankProblems {
   /**
    * 
    * @param n > 0, n < 251
-   * @param c
+   * @param coins
    * @return
    */
-  public static long getWays(int n, int[] c) {
-    Arrays.sort(c);
+  public static long getWays(int n, int[] coins) {
     long[] ways = new long[n+1];
-    ways[0] = 1;
-    for (int l : c)
-      for (int i = l; i <= n; i++) { // start at 1 because 0 always no coins
-        ways[i] += ways[i-1]>0 ? ways[i-l] : 1;
-      System.out.println(i+": "+ways[i]);
-    }
-    return ways[(int) n];
+    ways[0] = 1; // because there's one way to get 0 cents... no coins.
+    for (int coin : coins) // for every coin
+      for (int i = coin; i <= n; i++) // for each amount the coin will fit in
+        ways[i] += ways[i-coin]; // add the number of ways for that amount-the value of the coin
+    return ways[n];
   }
   
   // +-======================================-+

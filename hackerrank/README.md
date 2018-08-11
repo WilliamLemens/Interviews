@@ -122,6 +122,6 @@
   </ul>
   <h4> Dynamic Programming </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/coin-change/problem">The Coin Change Problem</a> <code>getWays()</code></li> <em>TODO</em>
+    <li><a href="https://www.hackerrank.com/challenges/coin-change/problem">The Coin Change Problem</a> <code>getWays()</code></li>
   </ul>
 </details>
