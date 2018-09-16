@@ -29,8 +29,8 @@
   </ul>
   <h4> String Manipulation </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/ctci-making-anagrams/">Strings: Making Anagrams</a> (<code>makeAnagram()</code>) <em>TODO</em></li>
-    <li><a href="https://www.hackerrank.com/challenges/mark-and-toys/">Alternating Characters</a> (<code>maximumToys()</code>) <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/ctci-making-anagrams/">Strings: Making Anagrams</a> (<code>makeAnagram()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/alternating-characters/">Alternating Characters</a> (<code>alternatingCharacters()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/sherlock-and-valid-string/">Sherlock and the Valid String</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/special-palindrome-again/">Special Palindrome Again</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/common-child/">Common Child</a> <em>TODO</em></li>
@@ -82,30 +82,33 @@
   </ul>
   <h4> Trees </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/">Tree: Height of a Binary Tree</a> <em>TODO</em></li>
-    <li><a href="https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/">Binary Search Tree : Lowest Common Ancestor</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/">Tree: Height of a Binary Tree</a> (<code>height()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/">Binary Search Tree : Lowest Common Ancestor</a> (<code>lca()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/ctci-is-binary-search-tree/">Trees: Is This a Binary Search Tree?</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/tree-huffman-decoding/">Tree: Huffman Decoding</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/balanced-forest/">Balanced Forest</a> <em>TODO</em></li>
   </ul>
   <h4> Linked Lists </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/">Insert a node at a specific position in a linked list</a> <em>TODO</em></li>
-    <li><a href="https://www.hackerrank.com/challenges/insert-a-node-into-a-sorted-doubly-linked-list/">Inserting a Node Into a Sorted Doubly Linked List</a> <em>TODO</em></li>
-    <li><a href="https://www.hackerrank.com/challenges/reverse-a-doubly-linked-list/">Reverse a doubly linked list</a> <em>TODO</em></li>
-    <li><a href="https://www.hackerrank.com/challenges/find-the-merge-point-of-two-joined-linked-lists/">Find Merge Point of Two Lists</a> <em>TODO</em></li>
-    <li><a href="https://www.hackerrank.com/challenges/ctci-linked-list-cycle/">Linked Lists: Detect a Cycle</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/">Insert a node at a specific position in a linked list</a> (<code>insertNodeAtPosition()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/insert-a-node-into-a-sorted-doubly-linked-list/">Inserting a Node Into a Sorted Doubly Linked List</a> (<code>sortedInsert()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/reverse-a-doubly-linked-list/">Reverse a doubly linked list</a> (<code>reverse()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/find-the-merge-point-of-two-joined-linked-lists/">Find Merge Point of Two Lists</a> (<code>findMergeNode()</code>)</li>
+    <li><a href="https://www.hackerrank.com/challenges/ctci-linked-list-cycle/">Linked Lists: Detect a Cycle</a> (<code>hasCycle1()</code> & <code>hasCycle2()</code>)</li>
   </ul>
   <h4> Recursion and Backtracking </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/ctci-fibonacci-numbers/">Recursion: Fibonacci Numbers</a> <em>TODO</em></li>
+    <li>
+      <a href="https://www.hackerrank.com/challenges/ctci-fibonacci-numbers/">Recursion: Fibonacci Numbers</a> (<code>recursiveFibonacci()</code>)
+      <p>Now to never write another recursive Fibonacci function. I feel unclean.</p>
+    </li>
     <li><a href="https://www.hackerrank.com/challenges/ctci-recursive-staircase/">Recursion: Davis' Staircase</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/crossword-puzzle/">Crossword Puzzle</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/recursive-digit-sum/">Recursive Digit Sum</a> <em>TODO</em></li>
   </ul>
   <h4> Miscellaneous </h4>
   <ul>
-    <li><a href="https://www.hackerrank.com/challenges/flipping-bits/">Flipping bits</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/flipping-bits/">Flipping bits</a> (<code>flippingBits()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/ctci-big-o/">Time Complexity: Primality</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/friend-circle-queries/">Friend Circle Queries</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/maximum-xor/">Maximum Xor</a> <em>TODO</em></li>

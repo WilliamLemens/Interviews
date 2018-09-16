@@ -1,3 +1,5 @@
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,7 +27,7 @@ public class HackerrankProblems {
 //    System.out.println(hourglassSum(twodarr));
 //    System.out.println(hourglassSum(twodarr2));
 //    // rotLeft()
-    int[] arr = { 5, 2, -4, 5, -1 };
+    int[] arr = { 4, 6, 4, 5, 6, 2 };
 //    System.out.println(java.util.Arrays.toString(rotLeft(arr, 1)));
 //    System.out.println(java.util.Arrays.toString(rotLeft(arr, 2)));
 //    // checkMagazine()
@@ -45,7 +47,21 @@ public class HackerrankProblems {
 //    // The Coin Change Problem
 //    System.out.println(getWays(10,arr));
     // max arr subset
-    System.out.println(Arrays.toString(maxSubarray(arr)));
+//    System.out.println(candies(arr.length, arr));
+    SinglyLinkedList l1 = new SinglyLinkedList();
+    l1.insertNode(1);
+    l1.insertNode(2);
+    l1.insertNode(3);
+    SinglyLinkedList l2 = new SinglyLinkedList();
+    l2.insertNode(10);
+    l2.insertNode(11);
+    SinglyLinkedListNode n = new SinglyLinkedListNode(100);
+    SinglyLinkedListNode m = new SinglyLinkedListNode(101);
+    l1.insertNode(n);
+    l2.insertNode(n);
+    l1.insertNode(m);
+    l2.insertNode(m);
+    System.out.println(findMergeNode(l1.head, l2.head));
   }
 
   // +-======================================-+
@@ -110,6 +126,26 @@ public class HackerrankProblems {
       for (int i = coin; i <= n; i++) // for each amount the coin will fit in
         ways[i] += ways[i-coin]; // add the number of ways for that amount-the value of the coin
     return ways[n];
+  }
+  /**
+   * Calculates the maximum contiguous subarray sum and the
+   * maximum subsequence sum
+   * @param arr
+   * @return [max subarray sum, max subsequence sum]
+   */
+  public static int[] maxSubarray(int[] arr) {
+    int maxes[] = new int[] {Integer.MIN_VALUE, Integer.MIN_VALUE}; // subarray, subsequence
+    int current = 0;
+    for (int i = 0; i < arr.length; i++) {
+      // max subarray
+      current += arr[i];
+      if (maxes[0] < current) maxes[0] = current;
+      if (current < 0) current = 0;
+      // max subsequence
+      if (maxes[1] < 0 && maxes[1] < arr[i]) maxes[1] = arr[i];
+      else if (arr[i] > 0) maxes[1] += arr[i];
+    }
+    return maxes;
   }
   
   // +-======================================-+
@@ -220,9 +256,6 @@ public class HackerrankProblems {
 
   /**
    * Checks if each word in note is also in magazine
-   * 
-   * @param magazine
-   * @param note
    */
   public static void checkMagazine(String[] magazine, String[] note) {
     Map<String, Integer> map = new HashMap<>();
@@ -247,8 +280,6 @@ public class HackerrankProblems {
   /**
    * Returns "YES" if s1 and s2 share a substring, "NO" otherwise
    * 
-   * @param s1
-   * @param s2
    * @return "YES" or "NO"
    */
   public static String twoStrings(String s1, String s2) {
@@ -260,8 +291,6 @@ public class HackerrankProblems {
   /**
    * Returns "YES" if s1 and s2 share a substring, "NO" otherwise
    * 
-   * @param s1
-   * @param s2
    * @return "YES" or "NO"
    */
   public static String twoStringsOld(String s1, String s2) {
@@ -300,20 +329,14 @@ public class HackerrankProblems {
   /**
    * Returns the max number of toys that we can buy with $k. Each toy's price is
    * in prices
-   * 
-   * @param prices
-   * @param k
-   * @return
    */
   public static int maximumToys(int[] prices, int k) {
     Arrays.sort(prices);
     int count = 0;
     for (int i : prices) {
       k -= i;
-      if (k > 0)
-        count++;
-      else
-        break;
+      if (k > 0) count++;
+      else break;
     }
     return count;
   }
@@ -321,14 +344,29 @@ public class HackerrankProblems {
   // ================ STRING MANIPULATION ================
 
   /**
-   * 
-   * @param a
-   * @param b
-   * @return
+   * Finds the minimum number of deletions required to turn string a into string b
    */
   public static int makeAnagram(String a, String b) {
-    // TODO
-    return -1;
+    int out = 0,
+        freq[] = new int[26];
+    for (char c : a.toCharArray()) freq[c-97]++;
+    for (char c : b.toCharArray()) freq[c-97]--;
+    for (int i : freq) out += Math.abs(i);
+    return out;
+  }
+  /**
+   * Finds minimum number of deletions to make a string of 'A's and 'B's alternate
+   */
+  public static int alternatingCharacters(String s) {
+    int[] out = new int[2];
+    boolean b = true;
+    for (int i = 0; i < 2; i++) { // two cases. first char = 'A' or first char = 'B'
+      b = i == 0;
+      for (char c : s.toCharArray()) // iterate through and alternate 'A' and 'B'
+        if ((b && c == 'A') || (!b && c == 'B')) b = !b;
+        else out[i]++;
+    }
+    return Math.min(out[0], out[1]); // get min deleted chars of the 2 cases
   }
 
   // ================ GREEDY ALGORITHMS ================
@@ -352,10 +390,6 @@ public class HackerrankProblems {
 
   /**
    * O(NlogN) because of sort
-   * 
-   * @param k
-   * @param contests
-   * @return
    */
   public static int luckBalance(int k, int[][] contests) {
     int out = 0, important = 0;
@@ -382,26 +416,6 @@ public class HackerrankProblems {
 
   // ================ DYNAMIC PROGRAMMING ================
   /**
-   * Calculates the maximum contiguous subarray sum and the
-   * maximum subsequence sum
-   * @param arr
-   * @return [max subarray sum, max subsequence sum]
-   */
-  public static int[] maxSubarray(int[] arr) {
-    int maxes[] = new int[] {Integer.MIN_VALUE, Integer.MIN_VALUE}; // subarray, subsequence
-    int current = 0;
-    for (int i = 0; i < arr.length; i++) {
-      // max subarray
-      current += arr[i];
-      if (maxes[0] < current) maxes[0] = current;
-      if (current < 0) current = 0;
-      // max subsequence
-      if (maxes[1] < 0 && maxes[1] < arr[i]) maxes[1] = arr[i];
-      else if (arr[i] > 0) maxes[1] += arr[i];
-    }
-    return maxes;
-  }
-  /**
    * Finds the maximum sum of non-consecutive integers
    * @param arr
    * @return maximum sum
@@ -414,8 +428,166 @@ public class HackerrankProblems {
     return arr[arr.length-1];
   }
   /**
+   * Ayn Rand, eat your heart out.
+   * Only the best of children get the most candies!
+   * Minimize the number of candies each kid gets.
+   * @param n number of children
+   * @param arr children's rankings
+   * @return minimum number of candies needed
+   */
+  static long candies(int n, int[] arr) {
+    if (arr == null || arr.length == 0) return 0;
+    long total = 1;
+    int prev = 1, countDown = 0;
+    for (int i = 1; i < arr.length; i++) {
+      if (arr[i] >= arr[i-1]) {
+        if (countDown > 0) {
+          total += countDown*(countDown+1)/2; // arithmetic progression
+          if (countDown >= prev) total += countDown - prev + 1;
+          countDown = 0;
+          prev = 1;
+        }
+        prev = arr[i] == arr[i-1] ? 1 : prev+1;
+        total += prev;
+      } else countDown++;
+    }
+    if (countDown > 0) { // if we were descending at the end
+      total += countDown*(countDown+1)/2;
+      if (countDown >= prev) total += countDown - prev + 1;
+    }
+    return total;
+  }
+
+  // ================ TREES ================
+  /**
+   * Finds the height of a binary tree
+   */
+  public static int height(Node root) {
+    if (root == null) return -1;
+    return 1 + Math.max(height(root.left), height(root.right));
+  }
+  /**
+   * Finds the lowest common ancestor of two values in a BST
+   * @return the lca node
+   */
+  public static Node lca(Node root, int v1, int v2) {
+    Node curr = root;
+    while (curr != null)
+      if (curr.data > v1 && curr.data > v2)
+        curr = curr.left;
+      else if (curr.data < v1 && curr.data < v2)
+        curr = curr.right;
+      else return curr;
+    return null;
+  }
+  
+  //================ LINKED LISTS ================
+  public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
+    SinglyLinkedListNode prev = head,
+        node = new SinglyLinkedListNode(data);
+    if (position == 0) {
+      node.next = head;
+      return node;
+    }
+    for (int i = 0; i < position-1; i++)
+      prev = prev.next;
+    node.next = prev.next;
+    prev.next = node;
+    return head;
+  }
+  /**
+   * It's not pretty but it works.
+   * Inserts a node according to order in a doubly linked list
+   */
+  public static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
+    DoublyLinkedListNode prev = head,
+        node = new DoublyLinkedListNode(data);
+    if (head.data > data) {
+      node.next = head;
+      head.prev = node;
+      return node;
+    }
+    while (prev.data < data)
+      if (prev.next == null) {
+        node.prev = prev;
+        prev.next = node;
+        return head;
+      }
+      else if (prev.next.data < data)
+        prev = prev.next;
+      else
+        break;
+    node.next = prev.next;
+    node.prev = prev;
+    prev.next = node;
+    if (node.next != null)
+      node.next.prev = node;
+    return head;
+  }
+
+  public static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
+    while (head != null) {
+      DoublyLinkedListNode temp = head.next;
+      head.next = head.prev;
+      head.prev = temp;
+      if (head.prev == null)
+        break;
+      head = head.prev;
+    }
+    return head;
+  }
+  /**
+   * I really like this algorithm
+   */
+  public static int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+    SinglyLinkedListNode n1 = head1,
+        n2 = head2;
+    while (n1 != n2) {
+      if (n1.next == null) n1 = head2;
+      else n1 = n1.next;
+      
+      if (n2.next == null) n2 = head1;
+      else n2 = n2.next;
+    }
+    return n1.data;
+  }
+  /**
+   * Tests if LinkedList has a cycle, exploiting the max list size of 100
+   */
+  public static boolean hasCycle1(Node head) {
+    try {
+      for (int i = 0; i < 101; i++)
+        head = head.next;
+    } catch(NullPointerException e) { return false; }
+    return true;
+  }
+  /**
+   * Tests if LinkedList has a cycle w/o exploiting max size, using Floyd's Tortoise & Hare
+   */
+  public static boolean hasCycle2(Node head) {
+    if (head == null) return false;
+    
+    Node tort = head;
+    Node hare = head.next;
+    
+    while (tort != hare) {
+      if (hare == null || hare.next == null) return false;
+      tort = tort.next;
+      hare = hare.next.next;
+    }
+    return true;
+  }
+
+  // ================ RECURSION & BACKTRACKING ================
+  public static int recursiveFibonacci(int n) {
+    if (n == 0 || n == 1) return n;
+    return recursiveFibonacci(n-1)+recursiveFibonacci(n-2);
+  }
+  
+  // ================ MISC. ================
+  static long flippingBits(long n) { return n ^ 0xffffffff; }
+  /**
    * Finds the maximum sum of contiguous values in arr
-   * @param arr
    * @return sum of the maximum subarray
    */
   public static int maxSubarraySum(int[] arr) {
@@ -427,5 +599,121 @@ public class HackerrankProblems {
       if (current < 0) current = 0;
     }
     return max;
+  }
+  
+  // -================< HELPER STUFF >================-
+  private static class Node {
+    Node left;
+    Node right;
+    Node next;
+    int data;
+    
+    Node(int data) {
+      this.data = data;
+      left = null;
+      right = null;
+      next = null;
+    }
+  }
+  public static Node insert(Node root, int data) {
+    if (root == null)
+        return new Node(data);
+    else {
+      Node cur;
+      if (data <= root.data) {
+          cur = insert(root.left, data);
+          root.left = cur;
+      } else {
+          cur = insert(root.right, data);
+          root.right = cur;
+      }
+      return root;
+    }
+  }
+  static class SinglyLinkedListNode {
+    public int data;
+    public SinglyLinkedListNode next;
+
+    public SinglyLinkedListNode(int nodeData) {
+      this.data = nodeData;
+      this.next = null;
+    }
+  }
+
+  static class SinglyLinkedList {
+    public SinglyLinkedListNode head;
+    public SinglyLinkedListNode tail;
+
+    public SinglyLinkedList() {
+      this.head = null;
+      this.tail = null;
+    }
+
+    public void insertNode(int nodeData) {
+      SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
+      if (this.head == null) this.head = node;
+      else this.tail.next = node;
+      this.tail = node;
+    }
+    public void insertNode(SinglyLinkedListNode node) {
+      if (this.head == null)
+          this.head = node;
+      else
+          this.tail.next = node;
+      this.tail = node;
+    }
+  }
+  
+  public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter)
+      throws IOException {
+    while (node != null) {
+      bufferedWriter.write(String.valueOf(node.data));
+      node = node.next;
+      if (node != null)
+          bufferedWriter.write(sep);
+    }
+  }
+  static class DoublyLinkedListNode {
+    public int data;
+    public DoublyLinkedListNode next;
+    public DoublyLinkedListNode prev;
+
+    public DoublyLinkedListNode(int nodeData) {
+      this.data = nodeData;
+      this.next = null;
+      this.prev = null;
+    }
+  }
+
+  static class DoublyLinkedList {
+    public DoublyLinkedListNode head;
+    public DoublyLinkedListNode tail;
+
+    public DoublyLinkedList() {
+      this.head = null;
+      this.tail = null;
+    }
+
+    public void insertNode(int nodeData) {
+      DoublyLinkedListNode node = new DoublyLinkedListNode(nodeData);
+
+      if (this.head == null)
+        this.head = node;
+      else {
+        this.tail.next = node;
+        node.prev = this.tail;
+      }
+      this.tail = node;
+    }
+  }
+
+  public static void printDoublyLinkedList(DoublyLinkedListNode node, String sep, BufferedWriter bufferedWriter)
+      throws IOException {
+    while (node != null) {
+      bufferedWriter.write(String.valueOf(node.data));
+      node = node.next;
+      if (node != null)
+        bufferedWriter.write(sep);
+    }
   }
 }
