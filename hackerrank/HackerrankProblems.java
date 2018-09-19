@@ -509,6 +509,24 @@ public class HackerrankProblems {
       // make sure both of the child nodes are within bounds, accounting for the new restrictions of the current node
       return checkBSTHelper(node.left, min, node.data-1) && checkBSTHelper(node.right, node.data+1, max);
   }
+  /**
+   * Decodes a Huffman tree
+   */
+  void decode(String s, Node root) {
+    Node current = root;
+    String out = "";
+    
+    for (char c : s.toCharArray()) {
+        // move left or right, accordingly
+        current = c == '0' ? current.left : current.right;
+        // if leaf, save value & return to root
+        if (current.left == null && current.right == null) {
+            out = out + current.data;
+            current = root;
+        }
+    }
+    System.out.println(out);
+}
   
   //================ LINKED LISTS ================
   public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
