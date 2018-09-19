@@ -84,7 +84,7 @@
   <ul>
     <li><a href="https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/">Tree: Height of a Binary Tree</a> (<code>height()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/">Binary Search Tree : Lowest Common Ancestor</a> (<code>lca()</code>)</li>
-    <li><a href="https://www.hackerrank.com/challenges/ctci-is-binary-search-tree/">Trees: Is This a Binary Search Tree?</a> <em>TODO</em></li>
+    <li><a href="https://www.hackerrank.com/challenges/ctci-is-binary-search-tree/">Trees: Is This a Binary Search Tree?</a> (<code>checkBST()</code> & <code>checkBSTHelper()</code>)</li>
     <li><a href="https://www.hackerrank.com/challenges/tree-huffman-decoding/">Tree: Huffman Decoding</a> <em>TODO</em></li>
     <li><a href="https://www.hackerrank.com/challenges/balanced-forest/">Balanced Forest</a> <em>TODO</em></li>
   </ul>

@@ -37,8 +37,10 @@ public class HackerrankProblems {
 //    // makeAnagram()
 //    makeAnagram("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke");
 //    // minimumBribes()
-//    minimumBribes2(new int[] { 3, 2, 1 });
-//    minimumBribes2(new int[] { 2, 1, 5, 3, 4 });
+    minimumBribes2(new int[] { 3, 2, 1 });
+    minimumBribes2(new int[] { 2, 1, 5, 4, 3 });
+//    minBribesShishir(new int[] { 3, 2, 1 });
+//    minBribesShishir(new int[] { 2, 1, 5, 3, 4 });
 //    // minimumAbsoluteDifference()
 //    System.out.println(minimumAbsoluteDifference(new int[] { -59, -36, -13, 1, -53, -92, -2, -96, -54, 75 }));
 //    // luckBalance()
@@ -61,7 +63,6 @@ public class HackerrankProblems {
     l2.insertNode(n);
     l1.insertNode(m);
     l2.insertNode(m);
-    System.out.println(findMergeNode(l1.head, l2.head));
   }
 
   // +-======================================-+
@@ -235,12 +236,28 @@ public class HackerrankProblems {
         return;
       }
       int val = q[i] - 2;
-      for (int j = val > 0 ? val : 0; j < i; j++)
+      for (int j = val > 0 ? val : 0; j < i; j++) // 
         if (q[j] > q[i])
           count++;
     }
     System.out.println(count);
   }
+  
+//  public static void minBribesShishir(int[] q) {
+//    int bribes = 0, offset = 0, ptr = 0;
+//    while (ptr < q.length) {
+//      if (q[ptr]- ptr != 1) {
+//        if (q[ptr] - ptr > 2) System.out.println("Too chaotic");
+//        else {
+//          offset++;
+//          for (int i = 0; i < q[ptr]-ptr; i++) {
+//            ptr++;
+//            if (q[ptr]-ptr > 2 + offset) System.out.println("Too chaotic");
+//          }
+//        }
+//      }
+//    }
+//  }
 
   /**
    * 
@@ -479,6 +496,15 @@ public class HackerrankProblems {
         curr = curr.right;
       else return curr;
     return null;
+  }
+  /**
+   * Checks if a tree is a BST or not
+   */
+  boolean checkBST(Node root) { return checkBSTHelper(root, 0, 10000); }
+  boolean checkBSTHelper(Node node, int min, int max) {
+      if (node == null) return true;
+      if (node.data < min || node.data > max) return false;
+      return checkBSTHelper(node.left, min, node.data-1) && checkBSTHelper(node.right, node.data+1, max);
   }
   
   //================ LINKED LISTS ================
