@@ -499,11 +499,14 @@ public class HackerrankProblems {
   }
   /**
    * Checks if a tree is a BST or not
+   * 
+   * Problem description gave node data a range of [0,10000]
    */
-  boolean checkBST(Node root) { return checkBSTHelper(root, 0, 10000); }
-  boolean checkBSTHelper(Node node, int min, int max) {
-      if (node == null) return true;
-      if (node.data < min || node.data > max) return false;
+  public static boolean checkBST(Node root) { return checkBSTHelper(root, 0, 10000); }
+  private static boolean checkBSTHelper(Node node, int min, int max) {
+      if (node == null) return true; // base case
+      if (node.data < min || node.data > max) return false; // if this node is out of bounds, not a BST
+      // make sure both of the child nodes are within bounds, accounting for the new restrictions of the current node
       return checkBSTHelper(node.left, min, node.data-1) && checkBSTHelper(node.right, node.data+1, max);
   }
   
@@ -629,9 +632,13 @@ public class HackerrankProblems {
   
   // -================< HELPER STUFF >================-
   private static class Node {
+    // for tree nodes
     Node left;
     Node right;
-    Node next;
+    
+    Node next; // for LinkedList nodes
+    
+    // for both
     int data;
     
     Node(int data) {
@@ -641,6 +648,7 @@ public class HackerrankProblems {
       next = null;
     }
   }
+  // inserts node into BST
   public static Node insert(Node root, int data) {
     if (root == null)
         return new Node(data);
